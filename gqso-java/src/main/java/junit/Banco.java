@@ -3,8 +3,9 @@ package junit;
 public class Banco {
     private double saldo;
 
-    public void saque(double valor) {
-
+    public double saque(double valor) {
+        setSaldo(getSaldo() - valor);
+        return getSaldo();
     }
 
     public double getSaldo() {
