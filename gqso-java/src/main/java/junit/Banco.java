@@ -7,7 +7,10 @@ public class Banco {
         private static final long serialVersionUID = 1L;
     }
 
-    public double saque(double valor) {
+    public double saque(double valor) throws SaldoInsuficiente{
+        if(valor > getSaldo()) {
+            throw new SaldoInsuficiente();
+        }
         setSaldo(getSaldo() - valor);
         return getSaldo();
     }
