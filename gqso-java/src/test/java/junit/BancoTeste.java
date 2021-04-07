@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import junit.Banco.SaldoInsuficiente;
+import junit.Banco.ValorNegativo;
 
 public class BancoTeste {
     Banco banco;
@@ -18,9 +19,10 @@ public class BancoTeste {
     }
 
     @Test
-    public void testeSaque() throws SaldoInsuficiente {
+    public void testeSaque() throws SaldoInsuficiente, ValorNegativo {
         assertEquals(banco.getSaldo() - 100, banco.saque(100));
-        assertThrows(Banco.SaldoInsuficiente.class, () -> banco.saque(100));
+        assertThrows(Banco.SaldoInsuficiente.class, () -> banco.saque(200));
+        assertThrows(Banco.ValorNegativo.class, () -> banco.saque(-100));
     }
 
 }
