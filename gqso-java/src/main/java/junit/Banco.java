@@ -7,6 +7,10 @@ public class Banco {
         private static final long serialVersionUID = 1L;
     }
 
+    public class ValorNegativo extends Exception {
+        private static final long serialVersionUID = 1L;
+    }
+
     public double saque(double valor) throws SaldoInsuficiente{
         if(valor > getSaldo()) {
             throw new SaldoInsuficiente();
