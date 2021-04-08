@@ -32,4 +32,8 @@ public class BancoTeste {
 
     }
 
+    public void testeSaldo() {
+        assertEquals(banco.getSaldo(), banco.saldo());
+    }
+
 }
