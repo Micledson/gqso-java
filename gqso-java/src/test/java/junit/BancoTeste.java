@@ -20,20 +20,20 @@ public class BancoTeste {
 
     @Test
     public void testeSaque() throws SaldoInsuficiente, ValorNegativo {
-        assertEquals(banco.getSaldo() - 100, banco.saque(100));
+        assertEquals(banco.saldo() - 100, banco.saque(100));
         assertThrows(Banco.SaldoInsuficiente.class, () -> banco.saque(200));
         assertThrows(Banco.ValorNegativo.class, () -> banco.saque(-100));
     }
 
     @Test
     public void testeDeposito() throws ValorNegativo {
-        assertEquals(banco.getSaldo() + 100, banco.deposito(100));
+        assertEquals(banco.saldo() + 100, banco.deposito(100));
         assertThrows(Banco.ValorNegativo.class, () -> banco.deposito(-100));
 
     }
-
+    @Test
     public void testeSaldo() {
-        assertEquals(banco.getSaldo(), banco.saldo());
+        assertEquals(100, banco.saldo());
     }
 
 }
