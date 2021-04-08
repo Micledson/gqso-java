@@ -12,24 +12,24 @@ public class Banco {
     }
 
     public double saque(double valor) throws SaldoInsuficiente, ValorNegativo {
-        if(valor > getSaldo()) {
+        if(valor > saldo()) {
             throw new SaldoInsuficiente();
         } else if(valor < 0) {
             throw new ValorNegativo();
         }
-        setSaldo(getSaldo() - valor);
-        return getSaldo();
+        setSaldo(saldo() - valor);
+        return saldo();
     }
 
     public double deposito(double valor) throws ValorNegativo {
         if(valor < 0) {
             throw new ValorNegativo();
         }
-        setSaldo(getSaldo() + valor);
-        return getSaldo();
+        setSaldo(saldo() + valor);
+        return saldo();
     }
-  
-    public double getSaldo() {
+    
+    public double saldo() {
         return this.saldo;
     }
     
