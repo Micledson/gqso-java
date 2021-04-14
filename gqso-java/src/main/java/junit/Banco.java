@@ -33,7 +33,7 @@ public class Banco {
         return this.saldo;
     }
     
-    public void setSaldo(double valor) {
+    private void setSaldo(double valor) {
         this.saldo = valor;
     }
 
