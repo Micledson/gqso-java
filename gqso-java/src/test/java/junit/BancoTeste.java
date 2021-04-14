@@ -13,9 +13,9 @@ public class BancoTeste {
     Banco banco;
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws ValorNegativo {
         banco = new Banco();
-        banco.setSaldo(100);
+        banco.deposito(100);
     }
 
     @Test
